@@ -1,0 +1,61 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="60"><meta name="description" content="Manchetes do mercado e a nota de quanto cada uma andou junto com o fluxo do mini-índice."><title>Almanaque ON: Sábado, 14 de novembro</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Manrope:wght@400;700&display=swap" rel="stylesheet"><style>
+:root{--ink:#0A1128;--painel:#111B3A;--borda:#22305C;--tx:#E9EDF8;--mut:#8D98BE;
+--ouro:#F2C14E;--ouro2:#B8892A;--alta:#3DDC97;--baixa:#FF5C7A}
+*{box-sizing:border-box}
+html{background:var(--ink)}
+body{margin:0;color:var(--tx);font:16px/1.55 Manrope,system-ui,sans-serif;
+background:radial-gradient(1200px 500px at 70% -10%,rgba(242,193,78,.10),transparent 60%),
+linear-gradient(rgba(141,152,190,.06) 1px,transparent 1px) 0 0/100% 32px,var(--ink)}
+.w{max-width:880px;margin:0 auto;padding:22px 18px 56px}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ouro);outline-offset:3px;border-radius:4px}
+.topo{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.marca{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:'Chakra Petch',sans-serif;
+font-weight:700;font-size:26px;letter-spacing:.04em}
+.on{font-size:15px;letter-spacing:.08em;padding:3px 10px 3px 22px;border-radius:999px;position:relative;
+border:1.5px solid var(--borda);color:var(--mut)}
+.on::before{content:"";position:absolute;left:9px;top:50%;width:7px;height:7px;margin-top:-3.5px;
+border-radius:50%;background:var(--mut)}
+.on.ligado{color:#1b1404;background:var(--ouro);border-color:var(--ouro);box-shadow:0 0 18px rgba(242,193,78,.55)}
+.on.ligado::before{background:#1b1404;animation:pulsa 1.6s ease-in-out infinite}
+@keyframes pulsa{50%{opacity:.25}}
+@media (prefers-reduced-motion:reduce){.on.ligado::before{animation:none}}
+.estado{color:var(--mut);font-size:14px}
+.dia{margin:34px 0 4px;font:600 clamp(30px,6vw,46px)/1.1 'Chakra Petch',sans-serif}
+.res{display:flex;gap:18px;flex-wrap:wrap;align-items:baseline;color:var(--mut);font-size:15px}
+.res b{font:600 22px 'Chakra Petch',sans-serif;color:var(--tx)}
+.up{color:var(--alta)}.dn{color:var(--baixa)}
+.graf{margin:18px 0 8px;padding:14px 8px 6px;border:1px solid var(--borda);border-radius:14px;
+background:linear-gradient(180deg,rgba(17,27,58,.9),rgba(10,17,40,.6))}
+svg{width:100%;height:auto;display:block}
+.leg{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--mut);margin:6px 2px 0}
+h2{font:600 21px 'Chakra Petch',sans-serif;margin:40px 0 4px}
+.intro{color:var(--mut);font-size:14px;margin:0 0 14px;max-width:66ch}
+.mov{border:1px solid var(--borda);border-left:4px solid var(--c);border-radius:6px 14px 14px 6px;
+background:var(--painel);padding:14px 16px 6px;margin:14px 0}
+.mov header{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap}
+.pts{font:700 24px 'Chakra Petch',sans-serif;color:var(--c)}
+.janela{font:600 16px 'Chakra Petch',sans-serif}
+.forca{color:var(--mut);font-size:13px}
+.prox{border:1px dashed var(--ouro2);border-radius:14px;padding:6px 16px;background:rgba(242,193,78,.04)}
+ul{list-style:none;margin:6px 0 0;padding:0}
+li{display:grid;grid-template-columns:52px 1fr;gap:14px;padding:12px 0;border-top:1px solid var(--borda)}
+li:first-child{border-top:0}
+.nota{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;
+background:conic-gradient(var(--ouro) calc(var(--n)*36deg),var(--borda) 0)}
+.nota span{width:38px;height:38px;border-radius:50%;background:var(--ink);display:grid;place-items:center;
+font:700 15px 'Chakra Petch',sans-serif}
+.chip{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;font-size:20px;
+border:1.5px solid var(--borda);color:var(--mut)}
+.chip.up{color:var(--alta);border-color:rgba(61,220,151,.5);background:rgba(61,220,151,.08)}
+.chip.dn{color:var(--baixa);border-color:rgba(255,92,122,.5);background:rgba(255,92,122,.08)}
+.t a{text-decoration:none;font-weight:700}
+.t a:hover{color:var(--ouro);text-decoration:underline}
+.sinal{display:inline-block;font-size:12px;margin-right:6px;transform:translateY(-1px)}
+.meta{font-size:13px;color:var(--mut);margin-top:3px}
+.vazio{color:var(--mut);padding:10px 0}
+.arquivo{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.arquivo a{border:1px solid var(--borda);border-radius:8px;padding:6px 10px;font-size:14px;text-decoration:none}
+.arquivo a:hover{border-color:var(--ouro);color:var(--ouro)}
+.aviso{font-size:12.5px;color:var(--mut);border-top:1px solid var(--borda);margin-top:44px;padding-top:14px;max-width:72ch}
+</style></head><body><div class="w"><div class="topo"><a class="marca" href="index.html" aria-label="Almanaque ON, página inicial">ALMANAQUE <span class="on ligado">ON</span></a><div class="estado">Pregão aberto. Atualiza a cada 5 minutos.</div></div><h1 class="dia">Sábado, 14 de novembro</h1><p class="intro">O fluxo deste pregão ainda não começou.</p><h2>Antes da abertura</h2><p class="intro"></p><div class="mov" style="--c:var(--ouro)"><ul><li><div class="nota" style="--n:1.0" title="nota 1.0 de 10"><span>1.0</span></div><div class="t"><span class="sinal up" aria-label="tom positivo para o índice" title="tom positivo para o índice">▲</span><a href="https://news.google.com/rss/articles/CBMixgFBVV95cUxQTGVOYVpNTTdWb0w1bjNSX3lNVktSR0doWU9NMVRUcEZLaVVkblduUkdRNUlMc05WeFM1NmtjV08wS3hNOUU4c1kxdFFxQ0JOSHNwUTZCNExSeUVocW5YSmhkellIcldoLUZ0M1NWZm1OOE9Pd3RXUnhuYjZabmp5bnhkekhvV1NGWWVYVkpEQ3dWZ0FqaDNRREVRdEVKYWppQzdUZG1YcTVual8wM05qbVFmM3NNU3JDRkNJMTloYWpORzNSb2c?oc=5" target="_blank" rel="noopener nofollow">Ibovespa sobe 2,35% na semana, enquanto dólar permanece no maior patamar desde junho de 2025</a><div class="meta">05:14, Grupo Ceres de Comunicação, via Google News. antes da abertura, tema: dólar, bolsa</div></div></li><li><div class="nota" style="--n:1.0" title="nota 1.0 de 10"><span>1.0</span></div><div class="t"><a href="https://www.infomoney.com.br/onde-investir/dividendos-da-petrobras-ipca-e-ipo-da-anthropic-veja-os-destaques-da-semana/" target="_blank" rel="noopener nofollow">Dividendos da Petrobras, IPCA e IPO da Anthropic; veja os destaques da semana</a><div class="meta">07:22, InfoMoney. antes da abertura, tema: inflação, petróleo, balanço</div></div></li><li><div class="nota" style="--n:1.0" title="nota 1.0 de 10"><span>1.0</span></div><div class="t"><a href="https://www.infomoney.com.br/economia/alem-das-tarifas-o-que-o-brasil-precisa-fazer-para-proteger-a-industria-do-aco/" target="_blank" rel="noopener nofollow">Além das tarifas: o que o Brasil precisa fazer para proteger a indústria do aço?</a><div class="meta">07:56, InfoMoney. antes da abertura, tema: EUA, atividade</div></div></li><li><div class="nota" style="--n:0.5" title="nota 0.5 de 10"><span>0.5</span></div><div class="t"><span class="sinal up" aria-label="tom positivo para o índice" title="tom positivo para o índice">▲</span><a href="https://news.google.com/rss/articles/CBMihAFBVV95cUxNcTRMRFN2YUN2ZDBweUlYaDdFLVN2TVF0YjdaYnU4X0pSY1ZsOU9BMGtCR2ZyQTV2Q0RMWlI1QUJzN1hyN2pBSkZ0dEhLSmxpMkk0bEFUajBCT1pobWhMRElJMmYyWVREUHdqNjk4NF9Dek5ZT0lMZTRfRmFVOUdJdlU0WXc?oc=5" target="_blank" rel="noopener nofollow">VALE3 nas carteiras: Hora de comprar as ações da Vale?</a><div class="meta">00:11, Acionista.com.br, via Google News. antes da abertura, tema: minério</div></div></li><li><div class="nota" style="--n:0.5" title="nota 0.5 de 10"><span>0.5</span></div><div class="t"><a href="https://news.google.com/rss/articles/CBMiYkFVX3lxTE5PRnJ4aFYxbUZtOFVtNFFWYTNNRlAyNFFVdVRManUtZlgtRGFTSFl2UGc3NFh3TU9VNnA3NFVDcV8wbXU1Ni1oT1FJd2JyM3c1bjhXX25yTEpTU3U2cEZJUkV3?oc=5" target="_blank" rel="noopener nofollow">Expectativa de juros de dois dígitos até 2030 afeta mandatos de Lula</a><div class="meta">01:10, boca.com.br, via Google News. antes da abertura, tema: juros</div></div></li><li><div class="nota" style="--n:0.5" title="nota 0.5 de 10"><span>0.5</span></div><div class="t"><a href="https://news.google.com/rss/articles/CBMiwgFBVV95cUxONFhISU5FVkZNN1RscV95ZmFxQktZT2pqNGRxRFVzUHBxekFsVUJIdmI2azVwVVFqUmJHdlVrR3FpSldQaXJNNHBrOW1iN2FUSXpndkZPU1ROdDROZ1VBZUVySklxMkpmajRKODN0cDU0QWVVY0xwX1c5NENOQWpsa1FPOVlTSW8wdF9Qb3VEV0pDOWVQXzZndktSemRyMVpkZktQWGFjLW9SbUxrbHlwMGZtWjB0cXl3ZU8xbDBIbmJWdw?oc=5" target="_blank" rel="noopener nofollow">Mercado financeiro prevê juros de dois dígitos até 2030, ao longo dos dois mandatos de Lula</a><div class="meta">02:12, Expressão Rondônia, via Google News. antes da abertura, tema: juros, repetida</div></div></li></ul></div><h2>Edições anteriores</h2><div class="arquivo"><a href="2026-11-14.html" aria-current=page>sáb 14/11</a><a href="2026-11-13.html">sex 13/11</a><a href="2026-11-12.html">qui 12/11</a></div><p class="aviso">O Almanaque ON é informativo e automático. A nota mede a coincidência de horário, tema e sentido entre a manchete e o fluxo do mini-índice (WIN); coincidência não prova causa, e movimento passado não garante movimento futuro. As setas descrevem o tom da manchete para o índice, não são recomendação de compra ou venda nem análise de valores mobiliários. As matérias pertencem aos seus veículos: aqui aparecem só a chamada e o link para o site oficial.<br>Atualizado em 14/11/2026 às 08:04.</p></div></body></html>
