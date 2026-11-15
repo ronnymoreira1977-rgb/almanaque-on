@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://almanaqueon.com.br/sitemap.xml
