@@ -22,5 +22,17 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: .
+      # o GitHub as vezes nao acha o pacote recem-enviado; espera e tenta de novo
       - id: deploy
+        continue-on-error: true
+        uses: actions/deploy-pages@v4
+      - if: steps.deploy.outcome == 'failure'
+        run: sleep 30
+      - id: deploy2
+        if: steps.deploy.outcome == 'failure'
+        continue-on-error: true
+        uses: actions/deploy-pages@v4
+      - if: steps.deploy.outcome == 'failure' && steps.deploy2.outcome == 'failure'
+        run: sleep 60
+      - if: steps.deploy.outcome == 'failure' && steps.deploy2.outcome == 'failure'
         uses: actions/deploy-pages@v4
